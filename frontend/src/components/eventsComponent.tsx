@@ -135,17 +135,20 @@ const Events = () => {
                                         <p style={{fontSize: '16px'}}>Start hour: {event.startHour}</p>
                                         <p style={{fontSize: '16px'}}>End hour: {event.endHour}</p>
                                         <EventButtonsDiv>
-                                          <RedButton onClick={async (e) => {
+                                          <RedButton onClick={async () => {
 
                                             // con el botón rojo se borran eventos a partir de su ID
                                             await deleteEvent({variables:{
                                               deleteEventId: event.id
                                             }});
+                                            if(event.id === editSelected){
+                                              setEditSelected('');
+                                            }
                                             await queryAnswer.refetch();
                                           }}>
                                             <i className="gg-trash"></i>
                                           </RedButton>
-                                          <GreenButton onClick={(e) => {
+                                          <GreenButton onClick={() => {
 
                                             // con el botón verde se prepara el formulario para editar un evento
                                             setEditSelected(event.id);
