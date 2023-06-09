@@ -107,8 +107,7 @@ const Events = () => {
     if(queryAnswer.error){
       return(
           <>
-          <h1>Error, couldn't connect to backend</h1>
-          <h1>Error message: {queryAnswer.error.message}</h1>
+          <h1>Error: {queryAnswer.error.message}</h1>
           </>
       )
   }
