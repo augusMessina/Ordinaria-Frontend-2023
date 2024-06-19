@@ -26,6 +26,8 @@ The GraphQL back-end provides the following queries and mutations:
 - **updateEvent.** updates an event, taking as input its id and new parameters.
 - **deleteEvent.** deletes the event corresponding to the given id.
 
+---
+
 # Ordinaria-FrontEnd-2023
 
 Se desea desarrollar un aplicación de gestión de calendario, que permita:
