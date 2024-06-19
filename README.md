@@ -1,18 +1,48 @@
+# Front-End Final Exam 2023
+
+This project corresponds to the final test of the Front-End Development subject at Nebrija University, rated as a 10/10.
+
+The objective was to create a web interface to interact with a provided GraphQL back-end, performing as an **events manager** and using Next.js as framework. The interface allows the user to:
+
+- Show all the upcoming events.
+- Add events.
+- Remove events.
+- Edit events.
+
+Each event has the following properties:
+
+- Title.
+- Description.
+- Date.
+- Starting time.
+- Ending time.
+
+**The application must forbid the user from overlapping events.**
+
+The GraphQL back-end provides the following queries and mutations:
+
+- **events.** returns all upcoming events in order from closest to furthest in time.
+- **createEvent.** creates an event from input event data.
+- **updateEvent.** updates an event, taking as input its id and new parameters.
+- **deleteEvent.** deletes the event corresponding to the given id.
+
 # Ordinaria-FrontEnd-2023
 
 Se desea desarrollar un aplicación de gestión de calendario, que permita:
- * Mostrar todos los eventos existentes a partir del día actual.
- * Añadir un evento
- * Borrar un evento
 
- Los eventos constan de:
-  * Título
-  * Descripción
-  * Fecha
-  * Hora de inicio
-  * Hora de finalización
+- Mostrar todos los eventos existentes a partir del día actual.
+- Añadir un evento
+- Borrar un evento
 
-__No puede haber eventos que se solapen en el tiempo__
+Los eventos constan de:
+
+- Título
+- Descripción
+- Fecha
+- Hora de inicio
+- Hora de finalización
+
+**No puede haber eventos que se solapen en el tiempo**
 
 Para ello se proporciona una API con las siguietes queries y mutaciones
 
@@ -22,30 +52,32 @@ Devuelve todos los eventos a partir de la fecha actual. Los eventos están orden
 
 **createEvent**
 
-Crea un nuevo evento __siempre que no haya un evento que se solape__ . Si hay algún evento que se solape devuelve un error.
+Crea un nuevo evento **siempre que no haya un evento que se solape** . Si hay algún evento que se solape devuelve un error.
 
 **updateEvent**
 
 Actualiza un evento con la siguiente gestión de errores.
-  - Si el evento no existe devuelve un error.
-  - Si al actualizarlo, el evento se solapa con otro evento, devuelve un error.
+
+- Si el evento no existe devuelve un error.
+- Si al actualizarlo, el evento se solapa con otro evento, devuelve un error.
 
 **deleteEvent**
 
-Borra un evento __siempre que dicho evento exista__, si no, devuelve un error.
+Borra un evento **siempre que dicho evento exista**, si no, devuelve un error.
 
 **NOTA**. Las fechas se guardan en la base de datos en formato `Date`, por lo que el alumno deberá ver cómo se gestionan los tipos de dato `Date` en front, así como el modo oportuno de pasárselos al back.
 
 El alumno debe desarrollar el frontend que ofrezca dicha funcionalidad buscando tanto un código que sea efectivo como una experiencia de usuario que haga sencilla la funiconalidad para el usuario. No se prestará atención al CSS, pero si a la estrucutra de los datos y a la funcionalidad. Ejemplos de buena funcionalidad serían (no se limitan a estos):
- - Los eventos se eliminan desde la lista de eventos existentes.
- - Los elementos se actualizan haciendo click en el evento y mostrando su información en un formulario para poder modificarla.
- - Si se añaden eventos que se solapan, se mostrará el error al usuario, indicando por qué no se puede añadir o modificar el evento.
- - etc.
 
- PUNTUACIÓN
+- Los eventos se eliminan desde la lista de eventos existentes.
+- Los elementos se actualizan haciendo click en el evento y mostrando su información en un formulario para poder modificarla.
+- Si se añaden eventos que se solapan, se mostrará el error al usuario, indicando por qué no se puede añadir o modificar el evento.
+- etc.
 
-  - Se pueden añadir eventos, gestionando los errores cuando 2 eventos se solapan: 2 puntos.
-  - Se pueden eliminar eventos seleccionándolo de la lista de eventos: 2 puntos.
-  - Se pueden modificar eventos, a partir de un evento seleccionado y con el formulario pre-relleno con los valores actuales: 2 puntos.
-  - Se pueden ver los eventos existentes en una lista, ordenados por fecha y hora y agrupados por fechas: 2 puntos.
-  - La estructura y calidad del código y la elección de los componentes es adecuada: 2 puntos.
+PUNTUACIÓN
+
+- Se pueden añadir eventos, gestionando los errores cuando 2 eventos se solapan: 2 puntos.
+- Se pueden eliminar eventos seleccionándolo de la lista de eventos: 2 puntos.
+- Se pueden modificar eventos, a partir de un evento seleccionado y con el formulario pre-relleno con los valores actuales: 2 puntos.
+- Se pueden ver los eventos existentes en una lista, ordenados por fecha y hora y agrupados por fechas: 2 puntos.
+- La estructura y calidad del código y la elección de los componentes es adecuada: 2 puntos.
